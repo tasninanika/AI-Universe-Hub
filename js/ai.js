@@ -31,10 +31,10 @@ const displayAi = (ai) =>{
         div.innerHTML = `
             <div class="pt-5 pl-5 pr-5">
             <figure class=" rounded-xl bg-[#0D6EFD0D]">
-              <img src="${singleAi.image}" alt="ai" class="rounded-xl" />
+              <img src="${singleAi.image}" alt="image not found" class="rounded-xl" />
             </figure>
         </div>
-        <div class="card-body">
+        <div class="card-body pb-5">
               <h2 class="card-title text-2xl font-semibold mb-2">Features</h2>
               <ol class="text-sm text-[#706F6F] border-b pb-4">
               <li>1. ${singleAi?.features[0]}</li>
