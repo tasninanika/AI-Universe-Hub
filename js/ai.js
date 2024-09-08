@@ -103,10 +103,10 @@ const displayShowDetails = (details) =>{
               </div>
 
               </div>
-              <div class="flex">
+              <div class="flex mt-4">
                 <div class="flex-1">
                 <h2 class="card-title text-2xl font-semibold mb-2">Features</h2>
-              <ul class="text-sm text-[#706F6F] list-disc list-inside pb-4">
+              <ul class="text-sm text-[#706F6F] list-disc list-inside">
                   <li>${details?.features[0]?.feature_name}</li>
                   <li>${details?.features[1]?.feature_name}</li>
                   <li>${details?.features[2]?.feature_name}</li>
@@ -115,9 +115,9 @@ const displayShowDetails = (details) =>{
               </div>
               <div class="flex-1">
                 <h2 class="card-title text-2xl font-semibold mb-2">Integrations</h2>
-              <ul class="text-sm text-[#706F6F] pb-4">
-              <li>${details?.integrations[0]}</li>
-              <li>${details?.integrations[1]}</li>
+              <ul class="text-sm text-[#706F6F] list-disc list-inside">
+              <li class="pb-1">${details?.integrations[0]}</li>
+              <li class="pb-1">${details?.integrations[1]}</li>
               <li>${details?.integrations[2]}</li>
               </ul>
               </div>
