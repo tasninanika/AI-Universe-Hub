@@ -5,7 +5,7 @@ const loadAiUniverse = async (isSeeMore) =>{
     const ai = data.data.tools;
     console.log(data);
     console.log(ai);
-    displayAi(ai);
+    displayAi(ai, isSeeMore);
 }
 
 
@@ -17,6 +17,10 @@ const displayAi = (ai, isSeeMore) =>{
     const aiContainer = document.getElementById('ai-container');
     console.log(aiContainer);
 
+    // clear ai container before adding new cards
+    aiContainer.textContent = '';
+
+    // get the button
     const seeMore = document.getElementById('see-more');
     if (ai.length > 6 && !isSeeMore) {
         seeMore.classList.remove('hidden');
@@ -24,9 +28,9 @@ const displayAi = (ai, isSeeMore) =>{
         seeMore.classList.add('hidden');
     }
 
-    // display 12 phones
+    // display 6 cards
     if (!isSeeMore) {
-        ai = ai.slice(0, 9);
+        ai = ai.slice(0, 6);
     }
 
 
@@ -75,6 +79,8 @@ const displayAi = (ai, isSeeMore) =>{
     });
 
 }
+
+loadAiUniverse(false);
 
 // load single data
 const showDetails = async (id) =>{
@@ -158,7 +164,14 @@ const displayShowDetails = (details) =>{
     show_details_modal.showModal();
 }
 
+const seeMoreButton = () =>{
+  const aiContainer = document.getElementById('ai-container');
+  
+  if (!aiContainer.classList.contains('hidden')) {
+      // Show all static phones
+      loadAiUniverse(true);
+  } 
+}
 
 
-loadAiUniverse();
 
