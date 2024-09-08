@@ -64,8 +64,8 @@ const displayAi = (ai) =>{
 }
 
 // load single data
-const showDetails = async () =>{
-    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/01`);
+const showDetails = async (id) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
     const data = await res.json();
     const details = data.data;
     console.log(data);
@@ -92,11 +92,11 @@ const displayShowDetails = (details) =>{
              <p class="text-[#03A30A] font-semibold">${details?.pricing[0]?.price} <br> ${details?.pricing[0]?.plan}</p>
               </div>
               <div class="bg-white text-center rounded-lg w-[132px] h-[100px] flex justify-center items-center">
-             <p class="text-[#03A30A] font-semibold">${details?.pricing[1]?.price}<br>
+             <p class="text-[#F28927] font-semibold">${details?.pricing[1]?.price}<br>
               ${details?.pricing[1]?.plan}</p>
               </div>
               <div class="bg-white text-center rounded-lg w-[132px] h-[100px] flex justify-center items-center">
-              <p class="text-[#03A30A] font-semibold">
+              <p class="text-[#EB5757] font-semibold">
                   ${details?.pricing[2]?.price}<br>
                   ${details?.pricing[2]?.plan}
               </p>
@@ -144,6 +144,12 @@ const displayShowDetails = (details) =>{
     `;
     show_details_modal.showModal();
 }
+
+const seeMoreButton = () =>{
+    const seeMore = document.getElementById('see-more');
+    console.log('perfect');
+}
+
 
 loadAiUniverse();
 
