@@ -83,7 +83,7 @@ const displayShowDetails = (details) =>{
     // set inner html
     showDetailsContainer.innerHTML = `
   
-        <div class ="flex">
+        <div class ="flex p-5 gap-5">
           <div class="border-2 border-[#EB5757] rounded-xl flex-1 bg-[#eb57571d]">
           <div class="card-body pb-5">
               <h3 class="text-2xl font-bold pb-4">${details?.description}</h3>
@@ -107,8 +107,8 @@ const displayShowDetails = (details) =>{
                 <div class="flex-1">
                 <h2 class="card-title text-2xl font-semibold mb-2">Features</h2>
               <ul class="text-sm text-[#706F6F] list-disc list-inside">
-                  <li>${details?.features[0]?.feature_name}</li>
-                  <li>${details?.features[1]?.feature_name}</li>
+                  <li class="pb-1">${details?.features[0]?.feature_name}</li>
+                  <li class="pb-1">${details?.features[1]?.feature_name}</li>
                   <li>${details?.features[2]?.feature_name}</li>
               </ul>
 
@@ -125,7 +125,7 @@ const displayShowDetails = (details) =>{
         </div>
         </div>
 
-       <div class="flex-1">
+       <div class="flex-1 border-2 rounded-lg">
           <div class="pt-5 pl-5 pr-5">
             <figure class=" rounded-xl bg-[#0D6EFD0D]">
               <img src="${details.image_link[0]}" alt="image not found" class="rounded-xl" />
