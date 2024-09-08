@@ -127,7 +127,7 @@ const displayShowDetails = (details) =>{
 
        <div class="flex-1 border-2 rounded-lg">
     <div class="card w-96 pt-5 pl-5 pr-5 flex justify-center items-center">
-        <figure class="flex justify-center items-center w-full">
+        <figure class="flex justify-center items-center w-full ml-16">
             <img src="${details.image_link[0]}" alt="image not found" class="rounded-xl max-w-full h-auto" />
         </figure>
     </div>
