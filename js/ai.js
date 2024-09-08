@@ -77,7 +77,71 @@ const showDetails = async () =>{
 const displayShowDetails = (details) =>{
     console.log(details);
 
-    
+    // get the modal div
+    const showDetailsContainer = document.getElementById('show-details-container');
+
+    // set inner html
+    showDetailsContainer.innerHTML = `
+  
+        <div class ="flex">
+          <div class="border-2 border-[#EB5757] rounded-xl flex-1 bg-[#eb57571d]">
+          <div class="card-body pb-5">
+              <h3 class="text-2xl font-bold pb-4">${details?.description}</h3>
+              <div class="flex gap-4">
+              <div class="bg-white text-center rounded-lg w-[132px] h-[100px] flex justify-center items-center">
+             <p class="text-[#03A30A] font-semibold">${details?.pricing[0]?.price} <br> ${details?.pricing[0]?.plan}</p>
+              </div>
+              <div class="bg-white text-center rounded-lg w-[132px] h-[100px] flex justify-center items-center">
+             <p class="text-[#03A30A] font-semibold">${details?.pricing[1]?.price}<br>
+              ${details?.pricing[1]?.plan}</p>
+              </div>
+              <div class="bg-white text-center rounded-lg w-[132px] h-[100px] flex justify-center items-center">
+              <p class="text-[#03A30A] font-semibold">
+                  ${details?.pricing[2]?.price}<br>
+                  ${details?.pricing[2]?.plan}
+              </p>
+              </div>
+
+              </div>
+              <div class="flex">
+                <div class="flex-1">
+                <h2 class="card-title text-2xl font-semibold mb-2">Features</h2>
+              <ul class="text-sm text-[#706F6F] list-disc list-inside pb-4">
+                  <li>${details?.features[0]?.feature_name}</li>
+                  <li>${details?.features[1]?.feature_name}</li>
+                  <li>${details?.features[2]?.feature_name}</li>
+              </ul>
+
+              </div>
+              <div class="flex-1">
+                <h2 class="card-title text-2xl font-semibold mb-2">Integrations</h2>
+              <ul class="text-sm text-[#706F6F] pb-4">
+              <li>${details?.integrations[0]}</li>
+              <li>${details?.integrations[1]}</li>
+              <li>${details?.integrations[2]}</li>
+              </ul>
+              </div>
+              </div>
+        </div>
+        </div>
+
+       <div class="flex-1">
+          <div class="pt-5 pl-5 pr-5">
+            <figure class=" rounded-xl bg-[#0D6EFD0D]">
+              <img src="${details.image_link[0]}" alt="image not found" class="rounded-xl" />
+            </figure>
+        </div>
+        <div class="card-body pb-5">             
+              <div class="flex">
+                <div class="">
+                  <h3 class="text-2xl font-bold pb-4">${details?.input_output_examples[0]?.input}</h3>
+              <p class="text-sm text-[#706F6F]">${details?.input_output_examples[0]?.output}</p>
+              </div>
+        </div>
+       </div>
+        </div>
+    `;
+    show_details_modal.showModal();
 }
 
 loadAiUniverse();
