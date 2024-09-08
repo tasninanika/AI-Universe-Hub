@@ -1,5 +1,5 @@
 // fetch data
-const loadAiUniverse = async () =>{
+const loadAiUniverse = async (isSeeMore) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools`);
     const data = await res.json();
     const ai = data.data.tools;
@@ -10,12 +10,25 @@ const loadAiUniverse = async () =>{
 
 
 // single card
-const displayAi = (ai) =>{
+const displayAi = (ai, isSeeMore) =>{
     console.log(ai);
 
     // get the container
     const aiContainer = document.getElementById('ai-container');
     console.log(aiContainer);
+
+    const seeMore = document.getElementById('see-more');
+    if (ai.length > 6 && !isSeeMore) {
+        seeMore.classList.remove('hidden');
+    } else {
+        seeMore.classList.add('hidden');
+    }
+
+    // display 12 phones
+    if (!isSeeMore) {
+        ai = ai.slice(0, 9);
+    }
+
 
     // for each card
     ai.forEach(singleAi => {
@@ -145,10 +158,6 @@ const displayShowDetails = (details) =>{
     show_details_modal.showModal();
 }
 
-const seeMoreButton = () =>{
-    const seeMore = document.getElementById('see-more');
-    console.log('perfect');
-}
 
 
 loadAiUniverse();
