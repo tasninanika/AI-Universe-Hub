@@ -16,4 +16,5 @@ const displayAi = (ai) =>{
     // card
     const aiContainer = document.getElementById('ai-container');
     console.log(aiContainer);
+    
 }
