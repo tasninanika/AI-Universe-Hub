@@ -126,18 +126,19 @@ const displayShowDetails = (details) =>{
         </div>
 
        <div class="flex-1 border-2 rounded-lg">
-          <div class="card w-96 pt-5 pl-5 pr-5">
-              <figure class="rounded-xl bg-[#0D6EFD0D]">
-              <img src="${details.image_link[0]}" alt="image not found" class="rounded-xl max-w-full h-auto" />
-          </figure>
+    <div class="card w-96 pt-5 pl-5 pr-5 flex justify-center items-center">
+        <figure class="flex justify-center items-center w-full">
+            <img src="${details.image_link[0]}" alt="image not found" class="rounded-xl max-w-full h-auto" />
+        </figure>
+    </div>
+    <div class="card-body pb-5 flex justify-center">
+        <div class="text-center">
+            <h3 class="text-2xl font-bold pb-4">${details?.input_output_examples[0]?.input}</h3>
+            <p class="text-sm text-[#706F6F]">${details?.input_output_examples[0]?.output}</p>
         </div>
-        <div class="card-body pb-5">             
-              <div class="flex">
-                <div class=" text-center">
-                  <h3 class="text-2xl font-bold pb-4">${details?.input_output_examples[0]?.input}</h3>
-              <p class="text-sm text-[#706F6F]">${details?.input_output_examples[0]?.output}</p>
-              </div>
-        </div>
+    </div>
+</div>
+
        </div>
         </div>
     `;
