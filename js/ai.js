@@ -48,7 +48,7 @@ const displayAi = (ai) =>{
               <p class="flex gap-1 text-sm text-[#706F6F]"><img src="images/Frame.png" alt="" class="h-[20px] w-[20px] mb-1">${singleAi?.published_in}</p>
               </div>
               <div class="card-actions justify-end flex-1 mt-5">
-                <button onclick="" class="btn bg-[#FEF7F7] text-white rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <button onclick="showDetails('${singleAi?.id}')" class="btn bg-[#FEF7F7] text-white rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none">
                 <path d="M4.5 12H19.5M19.5 12L12.75 5.25M19.5 12L12.75 18.75" stroke="#EB5757" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg></button>
               </div>
@@ -63,10 +63,22 @@ const displayAi = (ai) =>{
 
 }
 
+// load single data
 const showDetails = async () =>{
-    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
-    const data2 = await res.json();
-    console.log(data2);
+    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/01`);
+    const data = await res.json();
+    const details = data.data;
+    console.log(data);
+    console.log(details);
+    displayShowDetails(details);
+}
+
+// show details
+const displayShowDetails = (details) =>{
+    console.log(details);
+
+    
 }
 
 loadAiUniverse();
+
