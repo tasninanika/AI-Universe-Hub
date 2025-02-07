@@ -42,7 +42,7 @@ const displayAi = (ai, isSeeMore) =>{
         const div = document.createElement('div');
 
         // added classes on div
-        div.className = `card border-2 w-96`;
+        div.className = `card border-2 w-full`;
 
         // set inner html in div
         div.innerHTML = `
